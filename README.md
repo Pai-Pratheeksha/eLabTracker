@@ -51,11 +51,12 @@ Follow these steps to run the project locally:
 ```bash
 git clone <https://github.com/Pai-Pratheeksha/eLabTracker.git>
 cd eLabTracker
+```
 
 ### 2️⃣ Backend Setup
+```bash
 cd backend
 npm install
-
 
 Create a .env file inside the backend/ directory and add the following variables:
 
@@ -65,12 +66,10 @@ PORT=5000
 
 
 Start the backend server:
-
 npm run dev
 
-
 The backend will start on http://localhost:5000
-
+```
 ### 3️⃣ Frontend Setup
 
 Open a new terminal and navigate to the frontend folder:
@@ -159,7 +158,7 @@ Faculty can securely view uploaded reports.
 
 ☁️ Cloud deployment (Render / Railway / Vercel).
 
-###🧍‍♀️ Contributor
+### 🧍‍♀️ Contributor
 
 Your Name – Developer & Maintainer
 📧 Pratheeksha Pai
