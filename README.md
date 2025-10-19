@@ -143,11 +143,11 @@ eLabTracker/
 
 ### 🚧 Future Enhancements
 
-📧 Email notifications to faculty for new submissions.
-📊 Export grades and submissions (CSV or PDF).
-🔔 Real-time dashboard updates using WebSockets.
-📈 Analytics for student performance tracking.
-☁️ Cloud deployment (Render / Railway / Vercel).
+- 📧 Email notifications to faculty for new submissions.
+- 📊 Export grades and submissions (CSV or PDF).
+- 🔔 Real-time dashboard updates using WebSockets.
+- 📈 Analytics for student performance tracking.
+- ☁️ Cloud deployment (Render / Railway / Vercel).
 
 ### 🧍‍♀️ Contributor
 
