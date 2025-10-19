@@ -70,8 +70,9 @@ npm run dev
 
 The backend will start on http://localhost:5000
 ```
-### 3️⃣ Frontend Setup
 
+### 3️⃣ Frontend Setup
+```bash
 Open a new terminal and navigate to the frontend folder:
 
 cd frontend
@@ -80,8 +81,10 @@ npm run dev
 
 
 The frontend will start on http://localhost:5173
+```
 
 ### 🗂️ Project Structure
+```bash
 eLabTracker/
 │
 ├── backend/
@@ -104,64 +107,51 @@ eLabTracker/
 │   └── package.json
 │
 └── README.md
+```
 
 ### 🔒 Authentication & Authorization
 
-Users can register as either student or faculty.
-
-Authentication handled using JWT tokens, stored securely on the frontend.
-
-Middleware ensures proper access:
-
-protect → verifies token validity.
-
-isFaculty → restricts faculty-only routes.
+- Users can register as either student or faculty.
+- Authentication handled using JWT tokens, stored securely on the frontend.
+- Middleware ensures proper access.
+- protect → verifies token validity.
+- isFaculty → restricts faculty-only routes.
 
 ### 🧠 How to Use
-👥 User Registration & Login
 
-Students and faculty register and log in with email and password.
+**👥 User Registration & Login**
 
-Token is stored in localStorage for authentication.
+- Students and faculty register and log in with email and password.
+- Token is stored in localStorage for authentication.
 
-🧑‍🏫 Faculty Dashboard
+**🧑‍🏫 Faculty Dashboard**
 
-Create labs and add experiments.
+- Create labs and add experiments.
+- Review student submissions.
+- Assign grades and feedback.
 
-Review student submissions.
+**👩‍🎓 Student Dashboard**
 
-Assign grades and feedback.
-
-👩‍🎓 Student Dashboard
-
-View available labs and experiments.
-
-Submit lab PDFs.
-
-Track submission status and feedback from faculty.
+- View available labs and experiments.
+- Submit lab PDFs.
+- Track submission status and feedback from faculty.
 
 ### 📂 File Handling
 
-Files are uploaded using Multer and stored in MongoDB GridFS.
-
-Faculty can securely view uploaded reports.
+- Files are uploaded using Multer and stored in MongoDB GridFS.
+- Faculty can securely view uploaded reports.
 
 ### 🚧 Future Enhancements
 
 📧 Email notifications to faculty for new submissions.
-
 📊 Export grades and submissions (CSV or PDF).
-
 🔔 Real-time dashboard updates using WebSockets.
-
 📈 Analytics for student performance tracking.
-
 ☁️ Cloud deployment (Render / Railway / Vercel).
 
 ### 🧍‍♀️ Contributor
 
-Your Name – Developer & Maintainer
-📧 Pratheeksha Pai
+Pratheeksha Pai – Developer & Maintainer
 
 🌐 https://www.github.com/Pai-Pratheeksha
 
