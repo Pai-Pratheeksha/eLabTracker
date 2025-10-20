@@ -23,7 +23,7 @@ It provides a digital platform where **faculty** can create labs, add experiment
 ### ⚙️ General
 - **Role-based authentication**: Students vs Faculty.
 - **JWT-based security** for protected endpoints.
-- **MongoDB GridFS** for secure PDF storage.
+- **MongoDB file Object** for secure PDF storage.
 - Clean, responsive frontend built with **React.js**.
 - Organized codebase with clear separation of frontend and backend.
 
@@ -38,7 +38,7 @@ It provides a digital platform where **faculty** can create labs, add experiment
 | **Database** | MongoDB (Atlas) |
 | **File Uploads** | Multer middleware |
 | **Authentication** | JSON Web Tokens (JWT) |
-| **Storage** | MongoDB GridFS |
+| **Storage** | MongoDB file object, cloudinary free cloud storage |
 | **Tools** | Postman, Git, npm |
 
 ---
@@ -49,7 +49,7 @@ Follow these steps to run the project locally:
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone <https://github.com/Pai-Pratheeksha/eLabTracker.git>
+git clone https://github.com/Pai-Pratheeksha/eLabTracker.git
 cd eLabTracker
 ```
 
@@ -92,7 +92,7 @@ eLabTracker/
 │   ├── middleware/       # Auth and upload middleware
 │   ├── models/           # Mongoose models (User, Lab, Experiment, Submission)
 │   ├── routes/           # Express route definitions
-│   ├── config/           # Database and GridFS setup
+│   ├── config/           # Cloudinary setup
 │   ├── server.js         # Express app entry point
 │   └── package.json
 │
@@ -138,12 +138,13 @@ eLabTracker/
 
 ### 📂 File Handling
 
-- Files are uploaded using Multer and stored in MongoDB GridFS.
+- Files are uploaded using Multer and stored in cloudinary storage, but due to some constraints MongoDB file object is used here with a limit on file upload size.
+- Cloudinary setup codes has been commented, you can get your cloudinary credentials and uncomment those to try cloudinary storage.
 - Faculty can securely view uploaded reports.
 
 ### 🚧 Future Enhancements
 
-- 📧 Email notifications to faculty for new submissions.
+- 📧 Email notifications to faculty for new submissions and password reset feature.
 - 📊 Export grades and submissions (CSV or PDF).
 - 🔔 Real-time dashboard updates using WebSockets.
 - 📈 Analytics for student performance tracking.
