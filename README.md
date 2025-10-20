@@ -45,10 +45,10 @@ It provides a digital platform where **faculty** can create labs, add experiment
 
 ## 🖼️ Screenshots
 
-### 🔐 Home Page
+### 🏠 Home Page
 <img src="assets/eLabTracker_HomePage1.png" alt="Home Page" width="700">
 
-### 🔐 Intro and Footer in Home Page
+### 🏠 Intro and Footer in Home Page
 <img src="assets/Intro_and_Footer.png" alt="Intro and Footer Page" width="700">
 
 ### 🔐 Login Page
