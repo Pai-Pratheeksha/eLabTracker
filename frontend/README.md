@@ -147,4 +147,4 @@ npm start
 ## 🧑‍💻 Author
 
 Developed by Pratheeksha Pai, eLabTracker Head
-A Virtual Lab Record Management System for Computer Science & Engineering departments.
+- A Virtual Lab Record Management System for Computer Science & Engineering departments.
