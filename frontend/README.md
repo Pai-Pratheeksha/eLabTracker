@@ -39,6 +39,13 @@ frontend/
 │ │ │ ├── SubmissionForm.jsx # Students uploading their PDFs in the form
 │ │ └── ProtectedRoute.jsx# Wrapper to protect faculty/student pages
 │ │
+│ ├── assets/ # Images used for the website
+│ │ │ ├── home.jpg
+│ │ │ ├── homeimg1.jpg
+│ │ │ ├── homeimg2.jpg
+│ │ │ ├── homeimg3.jpg
+│ │ │ └── react.svg # comes by default, can be removed
+│ │
 │ ├── pages/ # Page components
 │ │ ├── Home.jsx # Home page with info and login/register buttons
 │ │ ├── Login.jsx # Login form for faculty/student
