@@ -43,6 +43,41 @@ It provides a digital platform where **faculty** can create labs, add experiment
 
 ---
 
+## 🖼️ Screenshots
+
+### 🔐 Home Page
+<img src="assets/eLabTracker_HomePage1.png" alt="Home Page" width="700">
+
+### 🔐 Intro and Footer in Home Page
+<img src="assets/Intro_and_Footer.png" alt="Intro and Footer Page" width="700">
+
+### 🔐 Login Page
+<img src="assets/Login.png" alt="Login Page" width="700">
+
+### 🔐 Register Page
+<img src="assets/Register.png" alt="Register Page" width="700">
+
+### 🧑‍🏫 Faculty Dashboard
+<img src="assets/FacultyDashboard1.png" alt="Faculty Dashboard" width="700">
+<br>
+<img src="assets/FacultyDashboard2.png" alt="Faculty Dashboard" width="700">
+<br>
+<img src="assets/FacultyDashboard3.png" alt="Faculty Dashboard" width="700">
+<br>
+<img src="assets/FacultyDashboard4.png" alt="Faculty Dashboard" width="700">
+
+
+### 👩‍🎓 Student Dashboard
+<img src="assets/Student_Dashboard.png" alt="Student Dashboard" width="700">
+
+### 📄 About eLabTracker
+<img src="assets/About.png" alt="About Page" width="700">
+
+### 📄 Terms and Conditions Page
+<img src="assets/Terms_and_Conditions.png" alt="Terms and Conditions Page" width="700">
+
+---
+
 ## ⚙️ Installation & Setup (Local Environment)
 
 Follow these steps to run the project locally:
