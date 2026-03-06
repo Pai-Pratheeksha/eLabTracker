@@ -185,12 +185,6 @@ eLabTracker/
 - 📈 Analytics for student performance tracking.
 - ☁️ Cloud deployment (Render / Railway / Vercel).
 
-### 🧍‍♀️ Contributor
-
-Pratheeksha Pai – Developer & Maintainer
-
-🌐 https://www.github.com/Pai-Pratheeksha
-
 ### ⚠️ Current Status
 
 This project is currently under development and not yet deployed.
