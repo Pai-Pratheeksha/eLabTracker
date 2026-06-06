@@ -1,4 +1,5 @@
 const Lab = require('../models/Lab');
+const User = require('../models/User');
 
 // POST /api/labs (faculty only)
 exports.createLab = async (req, res) => {
@@ -22,9 +23,27 @@ exports.createLab = async (req, res) => {
 // GET /api/labs
 exports.getAllLabs = async (req, res) => {
   try {
-    const labs = await Lab.find().populate('createdBy', 'name email');
+    const labs = await Lab.find({
+    createdBy: req.user.userId
+  }).populate('createdBy', 'name email');
     res.status(200).json(labs);
   } catch (err) {
     res.status(500).json({ message: 'Failed to fetch labs' });
+  }
+};
+
+exports.getStudentLabs = async (req, res) => {
+  try {
+    const student = await User.findById(req.user.userId);
+
+    const labs = await Lab.find({
+      semester: student.semester
+    });
+
+    res.status(200).json(labs);
+  } catch (err) {
+    res.status(500).json({
+      message: 'Failed to fetch labs'
+    });
   }
 };

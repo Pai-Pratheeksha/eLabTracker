@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { loginUser } from '../services/api';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({ email: '', password: '' });
@@ -34,6 +36,8 @@ const Login = () => {
     }
   };
 
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div className='container'>
       <h2>Login</h2>
@@ -42,8 +46,26 @@ const Login = () => {
         <label>Enter Email:</label>
         <input type="email" name="email" value={credentials.email} onChange={handleChange} required />
         <label>Enter Password:</label>
-        <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
+        <div className="password-field">
+  <input
+    type={showPassword ? "text" : "password"}
+    name="password"
+    value={credentials.password}
+    onChange={handleChange}
+    required
+  />
+
+  <span
+    className="eye-icon"
+    onClick={() => setShowPassword(!showPassword)}
+  >
+    {showPassword ? <FaEye /> : <FaEyeSlash />}
+  </span>
+</div>
         <button type="submit">Login</button>
+        <p>
+  Don't have an account? <Link to="/register">Register</Link>
+</p>
       </form>
     </div>
   );

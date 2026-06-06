@@ -22,6 +22,10 @@ const FacultyDashboard = () => {
       <Navbar />
       <div className='faculty-dashboard'>
         <h1 className='dashboard-title'>Faculty Dashboard</h1>
+        <div className="dashboard-banner">
+  <h2>Welcome Faculty 👋</h2>
+  <p>Manage subjects, experiments and student submissions efficiently.</p>
+</div>
         <LabList onSelectLab={(lab) => {
           setSelectedLab(lab);
           setSelectedExperiment(null);

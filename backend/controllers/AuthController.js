@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 // Register a new user
 exports.register = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, email, password, role, semester } = req.body;
 
     const existingUser = await User.findOne({ email });
     if (existingUser)
@@ -18,6 +18,7 @@ exports.register = async (req, res) => {
       email,
       password: hashedPassword,
       role,
+      semester,
     });
 
     await newUser.save();
@@ -54,6 +55,7 @@ exports.login = async (req, res) => {
         name: user.name,
         email: user.email,
         role: user.role,
+        semester: user.semester,
       },
     });
   } catch (err) {

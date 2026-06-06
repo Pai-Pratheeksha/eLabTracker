@@ -51,11 +51,14 @@ export default function StudentDashboard() {
           <div className="main-content">
             {/* Submission Form for selected experiment */}
             {selectedExperiment && (
-              <SubmissionForm experimentId={selectedExperiment} />
-            )}
+  <SubmissionForm
+    experimentId={selectedExperiment}
+    onSubmissionSuccess={fetchSubmissions}
+  />
+)}
 
             {/* My Submissions Section */}
-            <MySubmissions />
+            <MySubmissions submissions={submissions} />
           </div>
         </div>
       </div>

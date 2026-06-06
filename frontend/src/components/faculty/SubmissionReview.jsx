@@ -81,7 +81,7 @@ function SubmissionReview({ experiment }) {
                 </td>
                 <td>
                   <select
-                    className='select'
+                    className={`select status-${editedSubmissions[s._id]?.status?.replace(" ", "-")}`}
                     value={editedSubmissions[s._id]?.status}
                     onChange={(e) => handleChange(s._id, 'status', e.target.value)}
                   >

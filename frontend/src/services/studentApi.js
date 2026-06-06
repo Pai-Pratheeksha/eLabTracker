@@ -8,7 +8,7 @@ const API = axios.create({
 
 // Get all labs for a student
 export const getLabs = async () => {
-  const res = await API.get('/labs', {
+  const res = await API.get('/labs/student', {
         headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

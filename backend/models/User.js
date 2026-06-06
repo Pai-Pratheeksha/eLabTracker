@@ -19,6 +19,12 @@ const userSchema = new mongoose.Schema({
     enum: ['student', 'faculty'],
     default: 'student',
   },
+  semester: {
+  type: String,
+  required: function () {
+    return this.role === 'student';
+  }
+}
 }, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema);

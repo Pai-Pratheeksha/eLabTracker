@@ -1,20 +1,6 @@
 // src/components/student/MySubmissions.jsx
-import React, { useEffect, useState } from "react";
-import { getMySubmissions } from "../../services/studentApi";
 
-export default function MySubmissions() {
-  const [submissions, setSubmissions] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const data = await getMySubmissions();
-        setSubmissions(data);
-      } catch (err) {
-        console.error("Error fetching submissions", err);
-      }
-    })();
-  }, []);
+export default function MySubmissions({ submissions }) {
 
   return (
     <div>

@@ -22,6 +22,17 @@ function LabList({ onSelectLab }) {
     fetchLabs();
   };
 
+  const groupedLabs = labs.reduce((acc, lab) => {
+  const sem = lab.semester;
+
+  if (!acc[sem]) {
+    acc[sem] = [];
+  }
+
+  acc[sem].push(lab);
+  return acc;
+}, {});
+
   return (
     <div className='lab-list card'>
       <h2 className="section-heading"><FaPlusCircle /> Create new Lab</h2>
@@ -32,13 +43,29 @@ function LabList({ onSelectLab }) {
       </form>
 
       <h2 className="section-heading"><FaFlask />Labs</h2>
-      <ul className='item-list'>
-        {labs && labs.map((lab) => (
-          <li className='item clickable' key={lab._id} onClick={() => onSelectLab(lab)}>
-            {lab.subject} - Semester {lab.semester}
+      {Object.keys(groupedLabs)
+  .sort((a, b) => Number(a) - Number(b))
+  .map((semester) => (
+    <div key={semester} className="semester-group">
+
+      <h3 className="semester-title">
+        Semester {semester}
+      </h3>
+
+      <ul className="item-list">
+        {groupedLabs[semester].map((lab) => (
+          <li
+            className="item clickable"
+            key={lab._id}
+            onClick={() => onSelectLab(lab)}
+          >
+            {lab.subject}
           </li>
         ))}
       </ul>
+
+    </div>
+))}
     </div>
   );
 }
