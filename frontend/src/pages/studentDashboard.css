@@ -157,3 +157,30 @@ button:hover {
     margin-bottom: 15px;
   }
 }
+
+/* Mobile table fix */
+@media (max-width: 768px) {
+
+  .student-dashboard {
+    padding: 15px;
+  }
+
+  .student-dashboard h1 {
+    font-size: 2rem;
+  }
+
+  .main-content {
+    overflow-x: auto;
+    padding: 20px;
+  }
+
+  table {
+    min-width: 500px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
