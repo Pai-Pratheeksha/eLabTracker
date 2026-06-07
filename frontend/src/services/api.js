@@ -2,8 +2,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: '/api', // Vite proxy will handle forwarding to http://localhost:5000
-  withCredentials: true, // If your backend uses cookies
+  baseURL: import.meta.env.VITE_API_URL,
 });
 
 export async function registerUser(formData) {

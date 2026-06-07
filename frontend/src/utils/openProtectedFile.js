@@ -1,10 +1,13 @@
 // src/utils/openProtectedFile.js
+
 export async function openProtectedFile(submissionId) {
   try {
     const token = localStorage.getItem('token');
+    const API_URL = import.meta.env.VITE_API_URL;
+
     if (!token) throw new Error('Not authenticated');
 
-    const res = await fetch(`/api/submissions/file/${submissionId}`, {
+    const res = await fetch(`${API_URL}/submissions/file/${submissionId}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 

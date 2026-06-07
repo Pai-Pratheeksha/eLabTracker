@@ -24,6 +24,7 @@ function App() {
 
   const [loading, setLoading] = useState(true)
   const [userRole, setUserRole] = useState(null)
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(()=>{
     const token = localStorage.getItem("token");
@@ -31,7 +32,7 @@ function App() {
 
     if (token && role) {
       // Optional: verify token with backend
-      axios.get("/api/auth/verify", {
+      axios.get(`${API_URL}/auth/verify`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(res => {

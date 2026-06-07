@@ -56,7 +56,7 @@ const Register = () => {
     className="eye-icon"
     onClick={() => setShowPassword(!showPassword)}
   >
-    {showPassword ? <FaEye /> : <FaEyeSlash />}
+    {showPassword ? <FaEyeSlash /> : <FaEye />}
   </span>
 </div>
         <label>Select Role:</label>
