@@ -3,9 +3,23 @@
 **eLabTracker** is a full-stack web application designed for Computer Science and Engineering students and faculty to efficiently manage laboratory records, experiments, and student submissions.  
 It provides a digital platform where **faculty** can create labs, add experiments, review submissions, and assign grades — while **students** can submit lab reports in PDF format and track their progress.
 
+## 🚀 Live Demo
+
+🌐 Live Application: https://e-lab-tracker.vercel.app/
+
+## 🎯 Key Features
+
+- Role-Based Authentication (Faculty & Student)
+- JWT Protected Routes
+- PDF Report Submission
+- Lab & Experiment Management
+- Faculty Evaluation and Feedback
+- MongoDB Atlas Integration
+- Fully Deployed MERN Application
+
 ---
 
-## 🧩 Features
+## 🧩 Feature Description
 
 ### 👩‍🏫 For Faculty
 - Create labs with subject and semester details.
@@ -19,6 +33,7 @@ It provides a digital platform where **faculty** can create labs, add experiment
 - View submission status and feedback.
 - Track progress across multiple labs and experiments.
 - Simple, user-friendly interface.
+- Secure, role-based dashboard access.
 
 ### ⚙️ General
 - **Role-based authentication**: Students vs Faculty.
@@ -38,7 +53,8 @@ It provides a digital platform where **faculty** can create labs, add experiment
 | **Database** | MongoDB (Atlas) |
 | **File Uploads** | Multer middleware |
 | **Authentication** | JSON Web Tokens (JWT) |
-| **Storage** | MongoDB file object, cloudinary free cloud storage |
+| **Storage** | MongoDB Atlas, Cloudinary |
+| **Deployment** | Vercel, Render |
 | **Tools** | Postman, Git, npm |
 
 ---
@@ -46,35 +62,37 @@ It provides a digital platform where **faculty** can create labs, add experiment
 ## 🖼️ Screenshots
 
 ### 🏠 Home Page
-<img src="assets/eLabTracker_HomePage1.png" alt="Home Page" width="700">
+<img src="assets/elabtracker_homepage.png" alt="Home Page" width="700">
 
 ### 🏠 Intro and Footer in Home Page
-<img src="assets/Intro_and_Footer.png" alt="Intro and Footer Page" width="700">
+<img src="assets/elabtracker_footer.png" alt="Intro and Footer Page" width="700">
 
 ### 🔐 Login Page
-<img src="assets/Login.png" alt="Login Page" width="700">
+<img src="assets/elabtracker_login.png" alt="Login Page" width="700">
 
 ### 🔐 Register Page
-<img src="assets/Register.png" alt="Register Page" width="700">
+<img src="assets/elabtracker_register.png" alt="Register Page" width="700">
 
 ### 🧑‍🏫 Faculty Dashboard
-<img src="assets/FacultyDashboard1.png" alt="Faculty Dashboard" width="700">
+<img src="assets/elabtracker_faculty1.png" alt="Faculty Dashboard" width="700">
 <br>
-<img src="assets/FacultyDashboard2.png" alt="Faculty Dashboard" width="700">
+<img src="assets/elabtracker_faculty2.png" alt="Faculty Dashboard" width="700">
 <br>
-<img src="assets/FacultyDashboard3.png" alt="Faculty Dashboard" width="700">
+<img src="assets/elabtracker_faculty3.png" alt="Faculty Dashboard" width="700">
 <br>
-<img src="assets/FacultyDashboard4.png" alt="Faculty Dashboard" width="700">
+<img src="assets/elabtracker_faculty4.png" alt="Faculty Dashboard" width="700">
 
 
 ### 👩‍🎓 Student Dashboard
-<img src="assets/Student_Dashboard.png" alt="Student Dashboard" width="700">
+<img src="assets/elabtracker_student1.png" alt="Student Dashboard" width="700">
+<br>
+<img src="assets/elabtracker_student2.png" alt="Student Dashboard" width="700">
 
 ### 📄 About eLabTracker
-<img src="assets/About.png" alt="About Page" width="700">
+<img src="assets/elabtracker_about.png" alt="About Page" width="700">
 
 ### 📄 Terms and Conditions Page
-<img src="assets/Terms_and_Conditions.png" alt="Terms and Conditions Page" width="700">
+<img src="assets/elabtracker_terms.png" alt="Terms and Conditions Page" width="700">
 
 ---
 
@@ -177,15 +195,15 @@ eLabTracker/
 - Cloudinary setup codes has been commented, you can get your cloudinary credentials and uncomment those to try cloudinary storage.
 - Faculty can securely view uploaded reports.
 
+## ☁️ Deployment
+
+- Frontend: Vercel
+- Backend: Render
+- Database: MongoDB Atlas
+
 ### 🚧 Future Enhancements
 
 - 📧 Email notifications to faculty for new submissions and password reset feature.
 - 📊 Export grades and submissions (CSV or PDF).
 - 🔔 Real-time dashboard updates using WebSockets.
 - 📈 Analytics for student performance tracking.
-- ☁️ Cloud deployment (Render / Railway / Vercel).
-
-### ⚠️ Current Status
-
-This project is currently under development and not yet deployed.
-All core functionalities work in a local environment setup.
