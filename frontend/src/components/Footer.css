@@ -45,3 +45,48 @@
   padding-top: 15px;
   font-size: 14px;
 }
+
+@media (max-width: 768px) {
+
+  .footer {
+    padding: 20px 15px;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-section {
+    width: 100%;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul {
+    padding: 0;
+  }
+
+  .footer-section li {
+    margin: 6px 0;
+  }
+
+  .footer-bottom {
+    margin-top: 15px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .footer-section:nth-child(2),
+  .footer-section:nth-child(3) {
+    display: none;
+  }
+
+}
