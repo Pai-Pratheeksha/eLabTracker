@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("role");
-    window.location.href = "/login";
+    navigate("/login");
   };
 
   return (
