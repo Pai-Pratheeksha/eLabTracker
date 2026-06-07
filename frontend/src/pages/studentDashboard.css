@@ -104,16 +104,6 @@
   transform: scale(1.02);
 }
 
-@media (max-width: 768px) {
-  .submissions-table {
-    display: none;
-  }
-
-  .submission-card {
-    display: block;
-  }
-}
-
 /* Table Styling */
 table {
   width: 100%;
