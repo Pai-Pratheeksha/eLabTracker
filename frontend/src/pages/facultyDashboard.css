@@ -19,6 +19,13 @@
   letter-spacing: 1px;
 }
 
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 2.4rem;
+    margin: 20px 0;
+  }
+}
+
 .status-approved {
   background: #dcfce7;
   color: #166534;
