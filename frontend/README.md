@@ -37,7 +37,7 @@ frontend/
 │ │ │ ├── LabList.jsx # Students viewing all labs
 │ │ │ ├── MySubmissions.jsx # Students viewing their own submissions
 │ │ │ ├── SubmissionForm.jsx # Students uploading their PDFs in the form
-│ │ └── ProtectedRoute.jsx# Wrapper to protect faculty/student pages
+│ │ └── ProtectedRoute.jsx # Wrapper to protect faculty/student pages
 │ │
 │ ├── assets/ # Images used for the website
 │ │ │ ├── home.jpg
@@ -75,6 +75,7 @@ frontend/
 ├── README.md # Frontend README
 ├── index.html # Only HTML file
 ├── vite.config.js
+├── vercel.json
 ├── package-lock.json
 └── package.json
 
@@ -119,7 +120,7 @@ npm install
 ```bash
 Add your backend API URL:
 
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=<backend_api_url>
 ```
 
 ### 4. Run the development server
@@ -137,10 +138,6 @@ npm run build
 This frontend connects to the eLabTracker Backend (Node.js + Express + MongoDB).
 
 Ensure backend is running before using the frontend:
-```bash
-cd ../backend
-npm start
-```
 
 ## 🧠 Key Components Overview
 
@@ -150,8 +147,3 @@ npm start
 - **openProtectedFile.js**	Allows faculty to open/view student PDFs securely using backend route.
 - **FacultyDashboard.jsx**	Shows all student submissions with grading and comments.
 - **StudentDashboard.jsx**	Enables uploading experiment PDFs with titles and descriptions.
-
-## 🧑‍💻 Author
-
-Developed by Pratheeksha Pai, eLabTracker Head
-- A Virtual Lab Record Management System for Computer Science & Engineering departments.
