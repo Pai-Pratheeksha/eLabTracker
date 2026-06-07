@@ -159,6 +159,21 @@ a:hover {
   color: white;
 }
 
+@media (max-width: 768px) {
+  .navbar-home {
+    padding: 12px 16px;
+  }
+
+  .navbar-home h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-button {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}
+
 .nav-button {
   margin-left: 1rem;
   padding: 8px 16px;
@@ -177,6 +192,17 @@ a:hover {
   text-align: center;
   margin-top: 50px;
   font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1,
+  .hero-section h2 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
 }
 
 .intro-section {
@@ -264,4 +290,12 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
 }
