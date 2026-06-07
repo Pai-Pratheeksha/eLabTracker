@@ -3,8 +3,6 @@
 **eLabTracker** is a full-stack web application designed for Computer Science and Engineering students and faculty to efficiently manage laboratory records, experiments, and student submissions.  
 It provides a digital platform where **faculty** can create labs, add experiments, review submissions, and assign grades — while **students** can submit lab reports in PDF format and track their progress.
 
-## 🚀 Live Demo
-
 🌐 Live Application: https://e-lab-tracker.vercel.app/
 
 ## 🎯 Key Features
