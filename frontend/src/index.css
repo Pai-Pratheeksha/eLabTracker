@@ -117,7 +117,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 20px;
+  padding: 5px 20px;
   background: #007bff;
   color: #fff;
   position: sticky;
@@ -133,7 +133,7 @@ a:hover {
 .navbar-right .logout-btn {
   background: #dc3545;
   color: #fff;
-  padding: 8px 14px;
+  padding: 10px 14px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -146,7 +146,7 @@ a:hover {
 /* home page */
 
 .home-container {
-  padding: 20px;
+  padding: 0;
   color: white;
 }
 
@@ -155,7 +155,7 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   background-color: #003366;
-  padding: 1rem 2rem;
+  padding: 0.6rem 2rem;
   color: white;
 }
 

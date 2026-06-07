@@ -14,7 +14,7 @@ const HomePage = () => {
     return (
         <div className="home-container">
         <nav className="navbar-home">
-            <h1>eLabTracker - Your Virtual College Lab Record System</h1>
+            <h1>eLabTracker</h1>
             <div>
             <Link to="/login" className="nav-button">Login</Link>
             <Link to="/register" className="nav-button">Register</Link>
@@ -22,8 +22,14 @@ const HomePage = () => {
         </nav>
 
         <section className="hero-section">
-            <h2>Welcome to the Digital Lab Record Portal</h2>
-            <p>Manage, submit, and track your lab records efficiently and securely.</p>
+            <h2>Manage Lab Records Digitally</h2>
+            <p className="hero-tagline">
+  Your Virtual College Lab Record System
+</p>
+
+<p className="hero-subtitle">
+  Submit • Review • Track • Evaluate
+</p>
         </section>
         
         <section className="image-showcase-container">
