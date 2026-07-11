@@ -21,5 +21,6 @@ const labSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 labSchema.index({ semester: 1 });
+labSchema.index({ createdBy: 1, subject: 1, semester: 1 }, { unique: true });
 
 module.exports = mongoose.model('Lab', labSchema);

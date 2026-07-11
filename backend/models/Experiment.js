@@ -22,4 +22,14 @@ const experimentSchema = new mongoose.Schema({
   },
 }, { timestamps: true });
 
+experimentSchema.index(
+    {
+        lab:1,
+        title:1
+    },
+    {
+        unique:true
+    }
+);
+
 module.exports = mongoose.model('Experiment', experimentSchema);

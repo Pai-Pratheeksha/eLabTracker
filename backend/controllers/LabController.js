@@ -1,49 +1,48 @@
 const Lab = require('../models/Lab');
 const User = require('../models/User');
+const asyncHandler = require('../middleware/asyncHandler');
 
 // POST /api/labs (faculty only)
-exports.createLab = async (req, res) => {
+exports.createLab = asyncHandler(async (req, res) => {
   const { subject, semester } = req.body;
   const userId = req.user.userId;
 
-  try {
-    const lab = new Lab({
-      subject,
-      semester,
-      createdBy: userId,
-    });
+  const existingLab = await Lab.findOne({
+    subject,
+    semester,
+    createdBy: userId,
+  });
 
-    await lab.save();
-    res.status(201).json({ message: 'Lab created successfully', lab });
-  } catch (err) {
-    res.status(500).json({ message: 'Failed to create lab' });
+  if (existingLab) {
+    return res.status(409).json({ message: 'Lab already exists for this subject and semester' });
   }
-};
+
+  const lab = await new Lab({
+    subject,
+    semester,
+    createdBy: userId,
+  }).save();
+
+  return res.status(201).json({ message: 'Lab created successfully', lab });
+});
 
 // GET /api/labs
-exports.getAllLabs = async (req, res) => {
-  try {
-    const labs = await Lab.find({
-    createdBy: req.user.userId
-  }).populate('createdBy', 'name email');
-    res.status(200).json(labs);
-  } catch (err) {
-    res.status(500).json({ message: 'Failed to fetch labs' });
+exports.getAllLabs = asyncHandler(async (req, res) => {
+  const labs = await Lab.find({ createdBy: req.user.userId }).populate('createdBy', 'name email');
+
+  return res.status(200).json(labs);
+});
+
+exports.getStudentLabs = asyncHandler(async (req, res) => {
+  const student = await User.findById(req.user.userId);
+
+  if (!student) {
+      return res.status(404).json({
+          message: "Student not found"
+      });
   }
-};
 
-exports.getStudentLabs = async (req, res) => {
-  try {
-    const student = await User.findById(req.user.userId);
+  const labs = await Lab.find({ semester: student.semester });
 
-    const labs = await Lab.find({
-      semester: student.semester
-    });
-
-    res.status(200).json(labs);
-  } catch (err) {
-    res.status(500).json({
-      message: 'Failed to fetch labs'
-    });
-  }
-};
+  return res.status(200).json(labs);
+});

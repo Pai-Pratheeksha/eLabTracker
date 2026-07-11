@@ -2,9 +2,11 @@ const express = require('express');
 const router = express.Router();
 const { createExperiment, getExperimentsByLab } = require('../controllers/ExperimentController');
 const { protect, isFaculty } = require('../middleware/authMiddleware');
+const { createExperimentValidator } = require('../validators/experimentValidator');
+const validate = require('../middleware/validation');
 
 // POST - Create experiment under lab (faculty only)
-router.post('/:labId', protect, isFaculty, createExperiment);
+router.post('/:labId', protect, isFaculty, createExperimentValidator, validate, createExperiment);
 
 // GET - Get experiments for a lab (student/faculty)
 router.get('/:labId', protect, getExperimentsByLab);

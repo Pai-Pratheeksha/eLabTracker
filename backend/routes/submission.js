@@ -10,6 +10,8 @@ const {
 
 const { protect, isFaculty } = require('../middleware/authMiddleware');
 const upload = require('../middleware/upload');
+const { updateSubmissionValidator } = require('../validators/submissionValidator');
+const validate = require('../middleware/validation');
 
 // Student submits record
 router.post('/:experimentId', protect,upload.single('file'), submitRecord);
@@ -21,7 +23,7 @@ router.get('/my', protect, getMySubmissions);
 router.get('/experiment/:experimentId', protect, isFaculty, getExperimentSubmissions);
 
 // Faculty updates grade/status
-router.put('/:id', protect, isFaculty, gradeSubmission);
+router.put('/:id', protect, isFaculty, updateSubmissionValidator, validate, gradeSubmission);
 
 // Protected route to stream file buffer
 router.get('/file/:submissionId', protect, getSubmissionFile);
