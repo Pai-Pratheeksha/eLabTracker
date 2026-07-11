@@ -23,7 +23,8 @@ const registerValidator = [
     .withMessage('Role must be either student or faculty'),
   body('semester')
     .optional()
-    .trim(),
+    .isInt({ min: 1, max: 8 })
+    .withMessage('Semester must be a number between 1 and 8'),
 ];
 
 const loginValidator = [
