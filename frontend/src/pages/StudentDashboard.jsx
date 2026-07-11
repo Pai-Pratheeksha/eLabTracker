@@ -5,7 +5,9 @@ import ExperimentsList from "../components/student/ExperimentsList";
 import SubmissionForm from "../components/student/SubmissionForm";
 import MySubmissions from "../components/student/MySubmissions";
 import Navbar from "../components/Navbar";
+import DashboardSummary from "../components/DashboardSummary";
 import { getMySubmissions } from "../services/studentApi";
+import { getStudentSummaryItems } from "../utils/dashboardSummary";
 
 export default function StudentDashboard() {
   const [submissions, setSubmissions] = useState([]);
@@ -25,11 +27,14 @@ export default function StudentDashboard() {
     fetchSubmissions();
   }, []);
 
+  const summaryItems = getStudentSummaryItems(submissions);
+
   return (
     <>
       <Navbar />
       <div className="student-dashboard">
         <h1>Student Dashboard</h1>
+        <DashboardSummary items={summaryItems} />
         <div className="dashboard-container">
           
           {/* Sidebar: Labs + Experiments */}

@@ -5,6 +5,7 @@ import { submitExperiment } from "../../services/studentApi";
 export default function SubmissionForm({ experimentId, onSubmissionSuccess }) {
   const [file, setFile] = useState(null);
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,6 +14,7 @@ export default function SubmissionForm({ experimentId, onSubmissionSuccess }) {
       return;
     }
     try {
+      setLoading(true);
       const formData = new FormData();
       formData.append("file", file);
 
@@ -24,7 +26,10 @@ export default function SubmissionForm({ experimentId, onSubmissionSuccess }) {
       }
     } catch (err) {
       console.error(err);
-      setMessage("Error submitting experiment");
+      const backendMessage = err?.response?.data?.message;
+      setMessage(backendMessage || "Error submitting experiment");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -37,7 +42,9 @@ export default function SubmissionForm({ experimentId, onSubmissionSuccess }) {
           onChange={(e) => setFile(e.target.files[0])}
           required
         />
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Submitting...' : 'Submit'}
+        </button>
       </form>
       {message && <p>{message}</p>}
     </div>

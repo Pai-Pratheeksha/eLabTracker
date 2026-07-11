@@ -8,6 +8,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Login = () => {
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -16,7 +17,11 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isLoading) return;
+
     setError('');
+    setIsLoading(true);
+
     try {
       const data = await loginUser(credentials);
       localStorage.setItem('token', data.token);
@@ -33,6 +38,8 @@ const Login = () => {
       } else {
         setError('Something went wrong. Please try again.');
       }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -62,7 +69,9 @@ const Login = () => {
     {showPassword ? <FaEyeSlash /> : <FaEye />}
   </span>
 </div>
-        <button type="submit">Login</button>
+        <button type="submit" disabled={isLoading}>
+          {isLoading ? 'Logging in...' : 'Login'}
+        </button>
         <p>
   Don't have an account? <Link to="/register">Register</Link>
 </p>

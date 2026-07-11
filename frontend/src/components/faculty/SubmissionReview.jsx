@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { getSubmissions, updateSubmission } from '../../services/facultyApi';
 import { openProtectedFile } from '../../utils/openProtectedFile';
 
-function SubmissionReview({ experiment }) {
+function SubmissionReview({ experiment, onSubmissionsLoaded }) {
   const [submissions, setSubmissions] = useState([]);
   const [editedSubmissions, setEditedSubmissions] = useState({});
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (experiment) fetchSubmissions();
@@ -13,6 +14,9 @@ function SubmissionReview({ experiment }) {
   const fetchSubmissions = async () => {
     const data = await getSubmissions(experiment._id);
     setSubmissions(data);
+    if (onSubmissionsLoaded) {
+      onSubmissionsLoaded(data);
+    }
 
     // Initialize edited state
     const edited = {};
@@ -38,11 +42,14 @@ function SubmissionReview({ experiment }) {
 
   const handleSubmit = async (id) => {
     try{
+        setLoading(true);
         await updateSubmission(id, editedSubmissions[id]);
         fetchSubmissions(); // Refresh to reflect saved data
         alert("Reviews submitted successfully!")
     } catch (error) {
         alert("error submitting reviews")
+    } finally {
+        setLoading(false);
     }
   };
 
@@ -98,7 +105,9 @@ function SubmissionReview({ experiment }) {
                   />
                 </td>
                 <td>
-                  <button className='submit-btn' onClick={() => handleSubmit(s._id)}>Submit</button>
+                  <button className='submit-btn' onClick={() => handleSubmit(s._id)} disabled={loading}>
+                    {loading ? 'Submitting...' : 'Submit'}
+                  </button>
                 </td>
               </tr>
             )})}

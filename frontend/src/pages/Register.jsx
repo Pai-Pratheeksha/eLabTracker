@@ -14,6 +14,7 @@ const Register = () => {
     semester: '',
   });
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -24,10 +25,13 @@ const Register = () => {
     e.preventDefault();
     setError('');
     try {
+      setIsLoading(true);
       await registerUser(formData);
       navigate('/login');
     } catch (err) {
       setError(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -85,7 +89,9 @@ const Register = () => {
     </select>
   </>
 )}
-        <button type="submit">Register</button>
+        <button type="submit" disabled={isLoading} className={isLoading ? 'opacity-50 cursor-not-allowed' : ''}>
+          {isLoading ? 'Registering...' : 'Register'}
+        </button>
         <p>
   Already have an account? <Link to="/login">Login</Link>
 </p>
