@@ -1,9 +1,8 @@
 const express = require("express");
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
 const cors = require("cors");
-
-dotenv.config();
+const connectDB = require("./config/db");
+const config = require("./config/config");
+const { notFound, errorMiddleware } = require("./middleware/errorMiddleware");
 
 const app = express();
 
@@ -32,14 +31,10 @@ app.use('/api/submissions', submissionRoutes);
 const uploadRoutes = require('./routes/upload');
 app.use('/api/upload', uploadRoutes);
 
-// MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log("MongoDB connected"))
-.catch((err) => console.error("MongoDB error:", err));
+app.use(notFound);
+app.use(errorMiddleware);
 
-// Start server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Start server after DB connection
+connectDB().then(() => {
+  app.listen(config.port, () => console.log(`Server running on port ${config.port}`));
+});
